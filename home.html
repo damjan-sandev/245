@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0" >
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/4a3268857d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <h1>Damjan</h1>
+            <ul id="side-menu">
+                <li>
+                    <a href="#header">Home</a>
+                </li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Web Designer</p>
+            <h1>Hi, I'm <span>Damjan</span><br>Sandev from Macedonia</h1>
+        </div>
+    </div>
+</div>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col1">
+                <img src="viber_image_2023-06-25_22-15-15-861.jpg" width="620px" height="600px" alt="photo">
+            </div>
+            <div class="about-col2">
+                <h1>About Me</h1>
+                <p>Welcome to my website! I'm a programming enthusiast born and raised in the vibrant city of Skopje, Macedonia. Currently, I'm pursuing my studies at the Faculty of Computer Science, where I'm immersing myself in the exciting world of technology and expanding my skills.</p>
+                <p> Coding has always been my passion, and I find great joy in crafting elegant lines of code that bring innovative ideas to life and, I hope to  thrive in the dynamic and ever-evolving field of software development.</p>
+                    <p>In addition to programming, I have a diverse range of interests that keep me motivated and engaged. Sports play a significant role in my life, teaching me valuable lessons in teamwork, discipline, and perseverance. When I'm not immersed in coding, you can often find me on the soccer field, channeling my energy and enjoying the thrill of competition. I also have a deep appreciation for the outdoors, and I love exploring new hiking trails that lead me to breathtaking vistas and new adventures.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link"  onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('passion')">Passion</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web Design</span><br>Designing Web Pages</li>
+                        <li><span>Graphic Design</span><br>Editing and creating images</li>
+                        <li><span>App Development</span><br>Developing apps with Java</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022 - Current</span><br>Computer Science at FSCE</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="passion">
+                    <ul>
+                        <li><span>Coding</span><br>Developing software while writing clean and efficent code</li>
+                        <li><span>Chess</span><br>Playing Chess/Studying endgames</li>
+                        <li><span>Sports</span><br>Football/Tennis/Participating at tennis table tournaments/Skydiving</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="services">
+    <div class="container">
+        <h1>My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>I design responsive websites using javascript techonologies for my clients' needs.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-person-chalkboard"></i>
+                <h2>Programming Tutor</h2>
+                <p>You can sign up for my online courses on programming topics such as Structural and Object-Oriented programming.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-camera"></i>
+                <h2>Photography</h2>
+                <p>Sign up for photography sessions with me.</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1>Contact Me</h1>
+                <p> <i class="fa-sharp fa-solid fa-paper-plane"></i> damjan_sandev@gmail.com</p>
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <a href="ДамјанСандев_CV.pdf" download class="btn">Download CV</a>
+            </div>
+            <div class="contact-right">
+               <form>
+                   <input type="text" name="Name" placeholder="Your Name" required>
+                   <input type="email" name="email" placeholder="Your Email" required>
+                   <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                   <button type="submit" class="btn">Submit</button>
+               </form>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <p>Copyright <i class="fa-solid fa-copyright"></i> Damjan Sandev</p>
+        <a href="#"><i class="fa-solid fa-arrow-up-long"></i></a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontents=document.getElementsByClassName("tab-contents");
+    const opentab=(tabname)=>{
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+
+    }
+</script>
+<script>
+    var sidemenu=document.getElementById("side-menu");
+    const openmenu=() =>{
+        sidemenu.style.right="0";
+    }
+    const  closemenu=()=>{
+        sidemenu.style.right="-200px";
+    }
+</script>
+</body>
+</html>
